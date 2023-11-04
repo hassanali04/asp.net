@@ -1,0 +1,75 @@
+class Vehicle  
+{
+    public string Engine ;
+    public string Styring  ;
+    public string Wheel; 
+
+    public Vehicle(string engine,string styring,string wheel) 
+    {
+        Engine = engine;
+        Styring = styring;
+        Wheel = wheel;
+    }
+    public void Displayinfo()
+    {
+        Console.WriteLine("Engine" + Engine);
+        Console.WriteLine("Styring" + Styring);
+        Console.WriteLine("Wheel" + Wheel);
+    }
+   
+}
+
+class Car : Vehicle
+{
+    public string Transmition;
+    public string Speaker;
+    public string HeadLight;
+    public Car(string transmition,string speaker,string headlight) : base ("V8","PowerSteering","Alloywheel")  
+    {
+        Transmition=transmition;
+        Speaker=speaker;
+        HeadLight=headlight;
+    }
+    public void Displayinfo1()
+    {
+        Console.WriteLine("Trasnmition" + Transmition);
+        Console.WriteLine("Speaker" + Speaker);
+        Console.WriteLine("HeadLight" + HeadLight);
+    }
+
+
+}
+class Famous : Car //grand child
+{
+    public string Comfortable ;
+    public string LCD ;
+    public int AirBag ;
+    public Famous (string comfortable , string lcd ,int airbag)  : base ("yes","yes","yes")
+    {
+        Comfortable = comfortable;
+        LCD = lcd;
+        AirBag = airbag;
+
+    }
+    public void Displayinfo2()
+    {
+        Console.WriteLine("Comfortable" + Comfortable);
+        Console.WriteLine("LCD:"+LCD);
+        Console.WriteLine("Airbag:" + AirBag);
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+
+         Famous car = new Famous( "Luxurious", "Touchscreen", 6);
+          car.Displayinfo1();
+          car.Displayinfo1();
+          car.Displayinfo2();
+       
+
+     
+    }
+}

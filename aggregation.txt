@@ -1,0 +1,167 @@
+Association (has a relation)
+Association is a relationship among the objects. Association is "*a*" relationship among objects. In Association, the relationship among the objects determines what an object instance can cause another to perform an action on its behalf. We can also say that an association defines the multiplicity among the objects. We can define a one-to-one, one-to-many, many-to-one and many-to-many relationship among objects. Association is a more general term 
+to define a relationship among objects. Association means that an object "uses" another object.
+
+For example Managers and Employees, multiple employees may be associated with a single manager and a single employee may be associated with multiple managers.
+
+Association
+(The association defines the relationship between an object in C#. An a one-to-one, one-to-many, many-to-one and many-to-many relationship can be defined between objects. For example, An Employee can be associated with multiple projects, whereas a project can have more than one employee.)
+
+Association
+associaton is a simple structural connection or channel between classes and is a relationship where all objects have their own lifecycle and there is no owner.
+let make an exmple of doctor and patient
+multiple can associate wit a single doctor and single patient can associate with multiple doctors ,but there is no wonership between the onjects and both have their own lifecycle.Both can create and delete independently
+
+//Association
+Association
+It represents a relationship between two or more objects,an  one-to-one, one-to-many, many-to-one and many-to-many relationship can be defined between objects where all objects have their own lifecycle and there is no owner. The name of an association specifies the nature of the relationship between objects.
+Example:Let’s take an example of a relationship between Teacher and Student. Multiple students can associate with a single teacher and a single student can associate with multiple teachers. But there is no ownership between the objects and both have their own lifecycle. Both can be created and deleted independently.
+//
+using System;      
+class teacher
+{
+    public string Name { get; set; }
+}   
+
+class Student
+{
+    public string Name { get; set; }
+  
+}
+
+class Program1   
+{
+    static void Main(string[] args)
+    {       
+        teacher teacher = new teacher { Name = "Fahad Bhai" };
+        Student students = new Student { Name = "Hassan" };
+        Student students1 = new Student { Name = "Ali" };
+       
+        Console.WriteLine("Teacher: " + teacher.Name);
+        Console.WriteLine("Student 1: " + students.Name);
+        Console.WriteLine("Student 2: " + students1.Name);
+    }
+}
+
+Aggregation
+Aggregation is a special type of Association. Aggregation is "*the*" relationship among objects. We can say it is a direct association among the objects. In Aggregation, the direction specifies which object contains the other object. There are mutual dependencies among objects.
+
+For example, departments and employees, a department has many employees but a single employee is not associated with multiple departments.
+
+//Aggretion : has a relationship
+aggregation is a specialize form of of association where all object have their own lifecycle but there is a ownership like parent and child .Child object can not belong to another parent object at the same time .We can think it has a relationship.// 
+
+//lets make an example of employee and Company
+example a single employee can not belong to multiple companies, but if we delete the company ,Employee object will not destro//
+
+Aggregation
+It is a specialized form of Association where all object has its own lifecycle but there is ownership. This represents “whole-part or a-part-of” relationship. This is represented by a hollow diamond followed by a line.
+//example:Let’s take an example of a relationship between the Department and Teacher. A Teacher may belong to multiple departments. Hence Teacher is a part of multiple departments. But if we delete a Department, Teacher Object will not destroy.//
+class employee
+{
+    public string Name { get; set; }
+    public int Id { get; set; }
+    public employee(string name,int id) 
+    {
+        Name = name;
+        Id = id;
+    }
+    public void Properties()
+    {
+        Console.WriteLine("Employee Name  : "+ Name);
+        Console.WriteLine("Employee Id  : "+ Id);
+    }    
+}
+class departmant
+{
+    public string Name { get; set; }
+    public employee Manager { get; set; }
+    public departmant(string name ,employee manager)
+    {
+        Name=name;
+        Manager = manager;
+    }
+    public void Departmantproperties()
+    {
+        Console.WriteLine("department Name  : "+Name);
+        Console.WriteLine("department manager  : "+Manager.Name);
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        employee Employee = new employee("Hassan",233);
+        Employee.Properties();
+        employee manager = new employee("Hussain",101);
+        departmant Departmant = new departmant("computer",manager);
+        Departmant.Departmantproperties();
+    }
+}
+
+
+
+
+
+//Composition
+Composition is special type of Aggregation. It is a strong type of Aggregation. In this type of Aggregation the child object does not have their own life cycle. The child object's life depends on the parent's life cycle. Only the parent object has an independent life cycle.
+ If we delete the parent object then the child object(s) will also be deleted. We can define the Composition as a "Part of" relationship.//
+
+For example, the company and company location, a single company has multiple locations. If we delete the company then all the company locations are automatically deleted. The company location does not have their independent life cycle, it depends on the company object's life (parent object).
+
+
+Composition
+composition is again specialize form of aggregation it is a strong type of aggregation Here the Parent and chid objects have coincident lifetimes.Child object does not have it`s own lifecycle and if parent object gets deleted, then all of its child object will also be deleted.//
+
+
+Composition
+Composition
+It is a specialized form of Aggregation. It is a strong type of Aggregation. In this relationship, child objects do not have their lifecycle without the Parent object. If a parent object is deleted, all its child objects will also be deleted. This represents “death” relationship. This is represented by a solid diamond followed by a line.
+
+Example
+//Let’s take another example of a relationship between Questions and options. Single questions can have multiple options and option cannot belong to multiple questions. If we delete questions options will be automatically deleted.//
+
+class Question
+{
+    string _question;
+    Options _Options;
+    public Question(string question, Options options)
+    {
+        _question = question;
+        _Options = options;
+    }
+    public void ShowQuestionAndOption()
+    {
+        Console.WriteLine("Question:"+_question);
+        Console.WriteLine("Options:");
+        Console.WriteLine("Option1:"+ _Options.Option1);
+        Console.WriteLine("Option1:"+ _Options.Option2);
+        Console.WriteLine("Option1:"+ _Options.Option3);
+    }
+
+}
+class Options
+{
+   public  string Option1 { set; get; }
+    public string Option2 { set; get; }
+    public string Option3 { set; get; }
+    public Options(string option1,string option2,string option3)
+    {
+        Option1 = option1;
+        Option2 = option2;
+        Option3 = option3;
+    }
+}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Options questionOption = new Options("A=Fundamentals Of Programming","B=Object Oriented Programming","C=Data Structure");
+        Question question = new Question("Currently,which Programming Language Are You Studying",questionOption);
+        question.ShowQuestionAndOption();
+    }
+}
+
+
+
+

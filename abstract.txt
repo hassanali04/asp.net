@@ -1,0 +1,45 @@
+1.agr hum abstract sa phela bhi 1 class banada phr abstract kra tu phr  implementation nhi  hogi
+2.agr hum koi abstract methode bana rahy hai tu uski class ko abstract banana zarori hai
+3.abstract class ka object nhi banta
+4.hum na 1 abstract class banai agr usko use krana hai tu usko inherit karana lazmi hai or jo class inherit kar rahi hai usko body dana bhi lazmi hai
+5.abstract class ma abstract methode ka hona zarori nhi hai
+6.agr hum apna abstract class ka methode inherit wali class ma nhi banana chahta tu usko abstract krdanga but phr usko as a object use nhi krsakhta q k 
+  wo bhi 1 abstract class ban gy object ko call karana k liya huma 1 or class banani hogi
+7.abstract class ma hum constrctor use kr sakhta hai jaisa hum na phela banaya tha constructor
+8.abstract methode cannot be private 
+9.Access modefier of member sholud be same in derived class .if access modefier is public then in derived class methode should be public  
+10.abstract class can inherit other class just like other normal class 
+11.abstract class can contain methods,fields,constructor and other class member
+12.abstract class keyword "ABSTRACT"
+13.derived class need to implement abstract methode
+14.abstract class does not contain multiple inheritance
+15.
+16.
+17.
+
+
+1.if we create a class before making it abstract ,then there will be no implementation after making it abstract.
+2.if we are creating an abstract methode,then it is necessary to make its class abstract as well
+3.An object of an abstract class cannot be created
+4.If you have created an abstract class and want to use it, you must inherit from it, and the class that inherits from it must provide an implementation (body) for its methods.
+5.In an abstract class, it is necessary to have abstract methods.
+6.If you do not want to implement the method of your abstract class in the inheriting class, you can mark it as abstract in the inheriting class as well. However, you will not be able to use it as an object because it will also become an abstract class. To invoke the object, you would need to create another class.
+7.In an abstract class, you can indeed use constructors, just like you did before.
+8.abstract methode cannot be private 
+9.Access modefier of member sholud be same in derived class .if access modefier is public then in derived class methode should be public  
+10.abstract class can inherit other class just like other normal class 
+11.abstract class can contain methods,fields,constructor and other class member
+12.abstract class keyword "ABSTRACT"
+13.derived class need to implement abstract methode
+14.abstract class does not contain multiple inheritance
+15.Derived classes give abstract methods without bodies.
+16.subclasses are necessary for defining and implementation attributes
+
+
+
+
+
+
+
+
+

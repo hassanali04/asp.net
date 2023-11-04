@@ -1,0 +1,67 @@
+public class FruitsApiController : ControllerBase
+{  public List<string> fruits = new List<string>()
+   {"Apple"
+    "banana"
+    "Mango"
+    "Cherry"};
+[HttpGet]
+public List<string> GetFruits()
+{return fruits;}
+yaha tak ya sirf get karaga or iska aga id ka program
+[HttpGet("{id}")]
+public string GetFruitsByIndex(int id){return fruits.elementat(id);}
+1.atribute writing
+2.convention writng
+download packages:entity framework tool,pgsql,microsoft entity framework core design
+in json file:"ConnectionStrings":{"dbcs":"server=server_name;database=yout_databsename;trusted_connection = true;"
+ya jo ma likh raha ho ya builder wali file ma var app sa phela likhnga
+var provider = builder.Services.BbuildServiceProvider();
+var config = provider.GetRequiredService<IConfiguration>();
+builder.Services.AddDbContext<MyDBCntext>(item=>item.UseNpgsqlServer(config.GetConnectionString("jason wala nam aaga yaha")));
+api controller banana k band constructot banaga or parameter object nam dange or phr us pa click krka ctrl+dot krnga tw readonly aajaga
+Read funtion:public ActionResult GetStudent(){} or jab bhi hum .net web/app kam krta hai tw asyn lagata hai 
+syntax:public async Task<ActionResult<List<model name mean student>>> and methode_name or phr iska namespace bhi top pa add krna hoga
+var data = await context.jo table hum use kranga wo yaha aaga (student).ToListAsync();
+return OK(data);} or uska bad hum dobara get ka function banaga jo parameter laga mean id?
+syntax:[HttpGet("{id}")],public async Task<ActionResult<student>> methode name(int id=parameters hai ya){var student = await context.student.FindAsync(id) 
+if(student ==null){return NotFound();}return student;} ya wala code id k ziariya data get krta hai or upar wala sirf get
+syntax:[HttpPost]//create id,public async TasK<ActionResult<student>> methode name(student std=ya object jaisa upar banaya tha){
+await context.student.AddAsync(std);
+await context.student.SaceChangeAsync(); ,return ok(std);}
+syntax:[HttpPut("{id}")]=jab update krta hai tw id ki need hoti hai public async Task<ActionResult<student>> methode_nam(int id,student st=idhr hum do parameter
+use karanga){if(id!=std.Id){return BadRequest();}context.Entry(std).States=EntityState.Modefied;await context.student.SaveChangeAsync();return ok(std)}
+syntax:[HttpDelete("{id}")]public async Task<ActionResult<student>> methode_name(int id=idhr 1 hi parameter denga){
+var std = await context.students.FindAsync(id);if(std==null){return NotFound();}context.Students.Remove(std);await context.SaveChangeAsync();return ok();}
+lecture:string ? searchkeyword,int pagenumber =1,int count =10
+provides services:Browsers,Mobile applications,Desktop applications,IOTs 
+lecture:Jwt function used for AddSecurity(),AddSecurityRequirement,Services.AddAuthentication()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+other agr huma user ki id generate karani hai[KEY][DatabaseGenereted(DatabaseGeneratedOption.Identity)]

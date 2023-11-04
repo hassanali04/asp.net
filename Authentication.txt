@@ -1,0 +1,6 @@
+authentication
+user k sign in detail ko check krna authentication kha ta hai
+definition:authentication is process of checking the identity of the user that accessing our application
+authorization
+developer decide karga k kon kon sa right hona chahiya authentication kha lata hai
+definition:authoriztion is process of validating privilages to access a resource of the application
